@@ -4,7 +4,7 @@
 
 When working with a list in DraftJS you can't decrease list depth level by pressing `Return` on an empty list item, but you would expect it to behave this way because it is a common pattern for rich text editors.
 
-This plugin adds this missing piece of functionality. Moreover, it also add a `Tab`/`Shift + Tab` press support to move list item to the next depth level. So you don't need to worry about this also!
+This plugin adds this missing piece of functionality. Moreover, it also adds a `Tab`/`Shift + Tab` press support to move list item to the next depth level. So you don't need to worry about this anymore!
 
 ![demo](https://github.com/andrey-semin/draft-js-list-depth-plugin/raw/master/preview.gif)
 

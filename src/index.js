@@ -1,4 +1,4 @@
-import { RichUtils } from 'draft-js'
+import { RichUtils } from 'draft-js';
 import {
   getSelectedBlock,
   isEmptyListItem,
@@ -27,8 +27,8 @@ export default (options = { maxDepth: 4 }) => ({
     return 'not-handled';
   },
   onTab: (event, { setEditorState, getEditorState }) => {
-    const { maxDepth } = options
-    const editorState = getEditorState()
+    const { maxDepth } = options;
+    const editorState = getEditorState();
 
     setEditorState(RichUtils.onTab(event, editorState, maxDepth));
   }
