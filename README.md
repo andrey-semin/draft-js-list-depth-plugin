@@ -6,6 +6,8 @@ When working with a list in DraftJS you can't decrease list depth level by press
 
 This plugin adds this missing piece of functionality. Moreover, it also add a `Tab`/`Shift + Tab` press support to move list item to the next depth level. So you don't need to worry about this also!
 
+![demo](https://github.com/andrey-semin/draft-js-list-depth-plugin/raw/master/preview.gif)
+
 ## Usage
 ```sh
 npm i --save draft-js-list-depth-plugin
