@@ -1,0 +1,10 @@
+{
+  "extends": ["airbnb-base", "plugin:jest/recommended", "prettier"],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-restricted-globals": ["CustomEvent"]
+  }
+}
