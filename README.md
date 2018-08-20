@@ -1,31 +1,46 @@
-# Draft.js MultiLine List Item plugin
+# Draft.js List Depth plugin
 
 *This is a plugin for the [`draft-js-plugins-editor`](https://www.draft-js-plugins.com/), a plugin system that sits on top of Draft.js.*
 
-By default DraftJS doesn't allow you to have multiline items in lists - when you press `Shift+Return` it still adds a new list item.
+When working with a list in DraftJS you can't decrease list depth level by pressing `Return` on an empty list item, but you would expect it to behave this way because it is a common pattern for rich text editors.
 
-This plugin adds behaviour to the editor to stay on the same list item and include a so called 'soft newline' into the list item on `Shift+Return` press.
+This plugin adds this missing piece of functionality. Moreover, it also add a `Tab`/`Shift + Tab` press support to move list item to the next depth level. So you don't need to worry about this also!
 
 ## Usage
 ```sh
-npm i --save draft-js-multiline-list-item-plugin
+npm i --save draft-js-list-depth-plugin
 ```
 
 then import the plugin creator function
 
 ```js
-import createMultilineListItemPlugin from 'draft-js-multiline-list-item-plugin'
-const multiLineListItemPlugin = createMultilineListItemPlugin()
+import createListDepthPlugin from 'draft-js-list-depth-plugin'
+const listDepthPlugin = createListDepthPlugin()
 ```
 
-This can then be passed into a `draft-js-plugins-editor` component:
+Plugin object can then be passed into a `draft-js-plugins-editor` component:
 
 ```js
-import createMultilineListItemPlugin from 'draft-js-multiline-list-item-plugin'
+import createListDepthPslugin from 'draft-js-list-depth-plugin'
 import Editor from 'draft-js-plugins-editor'
 
-const multiLineListItemPlugin = createMultilineListItemPlugin()
-const plugins = [multiLineListItemPlugin]
+const listDepthPlugin = createListDepthPlugin()
+const plugins = [listDepthPlugin]
 
 <Editor plugins={plugins} />
 ```
+
+## Optional configuration object
+
+You can pass options object to the plugin as you call it:
+```js
+const options = {
+  maxDepth: 4
+}
+
+const listDepthPlugin = createListDepthPlugin(options)
+```
+
+| Option   | Description                                                          | Default value | Required |
+|----------|----------------------------------------------------------------------|---------------|----------|
+| maxDepth | The limit of the depth level for nested lists (zero-based numbering) | 4             | false    |
